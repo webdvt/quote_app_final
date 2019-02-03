@@ -1,0 +1,14 @@
+<div>
+   <a href="/">Go Back</a>
+   <h3>Edit the Quote</h3>
+   <form method="post" action="/quotes/{{quote.id}}?_method=PUT">
+      <input type="hidden" name="_method" value="PUT">
+      <label>
+         <input type="text" name="name" value="{{quote.name}}" required>
+      </label>
+      <label>
+         <input type="text" name="quote" value="{{quote.quote}}">
+      </label>
+      <button type="submit">Submit</button>
+   </form>
+</div>

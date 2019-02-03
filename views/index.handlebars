@@ -1,0 +1,27 @@
+<h1>Quotes App</h1>
+<h4>Write down your favorite quotes!</h4>
+<ul>
+   {{#each quotes}}
+      <li>
+         <span>{{name}}: {{quote}}</span>
+         <span>
+            <a href="/edit/{{id}}">Edit</a>
+            <form method="post" action="/quotes/{{id}}?_method=DELETE" style="display: inline;">
+               <input type="hidden" name="_method" value="DELETE">
+               <input type="submit" value="Delete">
+            </form>
+         </span>
+      </li>
+   {{else}}
+      <p>No quotes listed</p>
+   {{/each}}
+</ul>
+
+<div>
+   <h3>Add Quote</h3>
+   <form action="/quotes" method="post">
+      <input type="text" placeholder="name" name="name">
+      <input type="text" placeholder="quote" name="quote">
+      <button type="submit">Submit</button>
+   </form>
+</div>
